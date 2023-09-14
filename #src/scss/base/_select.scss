@@ -1,0 +1,101 @@
+.select {
+  position: relative;
+  height: 50px;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-start;
+  
+  &[data-state='active'] {
+     .select__title {
+        &::after {
+           transform: translateY(-50%) rotate(180deg);
+        }
+     }
+
+     .select__content {
+        opacity: 1;
+        visibility: visible;
+     }
+
+     .select__label + .select__input + .select__label {
+        max-height: 40px;
+        border-top-width: 1px;
+     }
+  }
+}
+.select__title {
+   @include input;
+   padding-right: 35px;
+   cursor: pointer;
+
+   &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      display: block;
+      width: 14px;
+      height: 14px;
+      transition: all 0.3s ease-in-out;
+      background: url('../img/icons/arrow.svg') center no-repeat;
+      transform: translateY(-50%);
+   }
+}
+.select__content {
+  position: relative;
+  top: 5px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  background: linear-gradient(#1e192d, #1e192d) padding-box, linear-gradient(180deg, rgba(250, 88, 151, .35) 0%, rgba(255, 88, 95, .35) 100%) border-box;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 8;
+  overflow: auto;
+  max-height: 124px;
+}
+.select__input {
+  display: none;
+
+  &:checked + label {
+     pointer-events: none;
+     background-color: #2B2440;
+     color: $white;
+  }
+  &:disabled + label {
+     opacity: 0.6;
+     pointer-events: none;
+  }
+}
+.select__label {
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  // width: 100%;
+  color: #f5f5f5;
+  font-size: 16px;
+  font-weight: 500;
+  min-height: 40px;
+  max-height: 0;
+  padding: 10px 55px 10px 15px;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+
+  // & + input + & {
+  //    border-top: 0 solid #0097ac;
+  // }
+
+  @media(any-hover: hover){
+     &:hover {
+        background-color: #2B2440;
+        color: $white;
+     }
+  }
+}
