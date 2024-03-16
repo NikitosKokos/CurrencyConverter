@@ -269,8 +269,11 @@ h6 {
   transition: --b1 0.3s ease-in-out, --b2 0.3s ease-in-out;
   background: -webkit-gradient(linear, left top, left bottom, from(#2B2440), to(#2B2440)) padding-box, -webkit-gradient(linear, left top, left bottom, from(var(--b1)), to(var(--b2))) border-box;
   background: linear-gradient(#2B2440, #2B2440) padding-box, linear-gradient(180deg, var(--b1) 0%, var(--b2) 100%) border-box;
-  padding-right: 35px;
+  padding-right: 40px;
   cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .select__title::-webkit-input-placeholder {
@@ -333,16 +336,27 @@ h6 {
   border-width: 2px;
   border-style: solid;
   border-color: transparent;
-  background: -webkit-gradient(linear, left top, left bottom, from(#1e192d), to(#1e192d)) padding-box, -webkit-gradient(linear, left top, left bottom, from(rgba(250, 88, 151, 0.35)), to(rgba(255, 88, 95, 0.35))) border-box;
-  background: linear-gradient(#1e192d, #1e192d) padding-box, linear-gradient(180deg, rgba(250, 88, 151, 0.35) 0%, rgba(255, 88, 95, 0.35) 100%) border-box;
+  background: -webkit-gradient(linear, left top, left bottom, from(#1e192d), to(#1e192d)) padding-box, -webkit-gradient(linear, left top, left bottom, from(rgb(250, 88, 151)), to(rgb(255, 88, 95))) border-box;
+  background: linear-gradient(#1e192d, #1e192d) padding-box, linear-gradient(180deg, rgb(250, 88, 151) 0%, rgb(255, 88, 95) 100%) border-box;
   border-radius: 12px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   opacity: 0;
   visibility: hidden;
   z-index: 8;
-  overflow: auto;
-  max-height: 124px;
+  max-height: 150px;
+  overflow: hidden;
+}
+
+.select__body {
+  overflow-y: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .select__input {
@@ -351,7 +365,7 @@ h6 {
 
 .select__input:checked + label {
   pointer-events: none;
-  background-color: #2B2440;
+  background-color: #2b2440;
   color: #fff;
 }
 
@@ -370,14 +384,18 @@ h6 {
   color: #f5f5f5;
   font-size: 16px;
   font-weight: 500;
-  min-height: 40px;
+  min-height: 50px;
   max-height: 0;
-  padding: 10px 55px 10px 15px;
+  padding: 10px 30px 10px 15px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  overflow: hidden;
-  white-space: nowrap;
   cursor: pointer;
+}
+
+.select__label span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 ._swiper {
@@ -525,6 +543,7 @@ h6 {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
+  margin: 0px 0px 40px 0px;
 }
 
 .converter__tabs:before {
@@ -605,10 +624,6 @@ h6 {
           align-items: center;
 }
 
-.converter__form {
-  margin: 40px 0px 0px 0px;
-}
-
 .converter__label {
   display: block;
   font-weight: 400;
@@ -629,14 +644,20 @@ h6 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 25px;
+  gap: 27px;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .converter__input-group {
-  width: 320px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .converter__input-group input {
@@ -687,7 +708,10 @@ h6 {
 }
 
 .converter__select {
-  min-width: 240px;
+  width: 240px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
 }
 
 .converter__switch {
@@ -701,7 +725,9 @@ h6 {
       -ms-flex-pack: center;
           justify-content: center;
   background: #2b2440;
-  width: 52px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 52px;
+          flex: 0 0 52px;
   height: 52px;
   border-radius: 50%;
   cursor: pointer;
@@ -737,26 +763,6 @@ h6 {
   border-radius: 12px;
   transition: --c1 0.3s ease-in-out, --c2 0.3s ease-in-out;
   background: linear-gradient(133deg, var(--c1) 0%, var(--c2) 100%);
-}
-
-.converter__rate-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 16px 0px 0px 0px;
-  font-size: 12px;
-  line-height: 1.25;
-  color: rgba(245, 245, 245, 0.5);
-}
-
-.converter__rate-conversion {
-  color: #fff;
 }
 
 .results-converter {
@@ -893,10 +899,6 @@ h6 {
   height: 19px;
   -o-object-fit: contain;
      object-fit: contain;
-}
-
-.currency-converter {
-  margin: 40px 0px 0px 0px;
 }
 
 .currency-converter__single {
@@ -1052,6 +1054,27 @@ h6 {
 
 .currency-converter__list {
   margin: 30px 0px 0px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+}
+
+.currency-converter__add {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 20px 0px 0px 0px;
 }
 
 ._container {
@@ -1117,7 +1140,7 @@ body._lock {
 
 @media (any-hover: hover) {
   .select__label:hover {
-    background-color: #2B2440;
+    background-color: #2b2440;
     color: #fff;
   }
 

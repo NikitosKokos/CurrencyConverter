@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 	@@include('_head.html',{
-	"title":"CurrencyConverter"
+	"title":"ExpoChange"
 	})
 	<body>
 		<div class="wrapper">
@@ -43,16 +43,18 @@
 													<div class="converter__select select" data-state>
 														<div class="select__title" data-default="Choose currency">Choose currency</div>
 														<div class="select__content">
-															<input id="usd" class="select__input" type="radio" name="from">
-															<label for="usd" class="select__label">USD</label>
-															<input id="eur" class="select__input" type="radio" name="from">
-															<label for="eur" class="select__label">EUR</label>
-															<input id="eure" class="select__input" type="radio" name="from">
-															<label for="eure" class="select__label">eur2</label>
-															<input id="eurw" class="select__input" type="radio" name="from">
-															<label for="eurw" class="select__label">EUR3</label>
-															<input id="eurq" class="select__input" type="radio" name="from">
-															<label for="eurq" class="select__label">EUR4</label>
+															<div class="select__body">
+																<input id="usd" class="select__input" type="radio" name="from">
+																<label for="usd" class="select__label"><span>USDwerrrrsdfssdfsdfsfsdfsdfdsfsdfsdfsdfsdf</span></label>
+																<input id="eur" class="select__input" type="radio" name="from">
+																<label for="eur" class="select__label"><span>USDwe rrr rsdfssd fsdfs fsdfs dfdsfsd fsd fsdfsdf</span></label>
+																<input id="eure" class="select__input" type="radio" name="from">
+																<label for="eure" class="select__label"><span>eur2</span></label>
+																<input id="eurw" class="select__input" type="radio" name="from">
+																<label for="eurw" class="select__label"><span>EUR3</span></label>
+																<input id="eurq" class="select__input" type="radio" name="from">
+																<label for="eurq" class="select__label"><span>EUR4</span></label>
+															</div>
 														</div>
 													 </div>
 												</div>
@@ -66,10 +68,18 @@
 													<div class="converter__select select" data-state>
 														<div class="select__title" data-default="Choose currency">Choose currency</div>
 														<div class="select__content">
-															<input id="usd2" class="select__input" type="radio" name="to">
-															<label for="usd2" class="select__label">USD</label>
-															<input id="eur2" class="select__input" type="radio" name="to">
-															  <label for="eur2" class="select__label">EUR</label>
+															<div class="select__body">
+																<input id="usd2" class="select__input" type="radio" name="to">
+																<label for="usd2" class="select__label"><span>USD</span></label>
+																<input id="eur2" class="select__input" type="radio" name="to">
+																<label for="eur2" class="select__label"><span>EUR</span></label>
+																<input id="eure2" class="select__input" type="radio" name="to">
+																<label for="eure2" class="select__label"><span>eur2</span></label>
+																<input id="eurw2" class="select__input" type="radio" name="to">
+																<label for="eurw2" class="select__label"><span>EUR3</span></label>
+																<input id="eurq2" class="select__input" type="radio" name="to">
+																<label for="eurq2" class="select__label"><span>EUR4</span></label>
+															</div>
 														</div>
 													 </div>
 												</div>
@@ -107,10 +117,6 @@
 												</div>
 											</div>
 											<button class="converter__btn" type="submit">Convert</button>
-										</div>
-										<div class="converter__rate-info">
-											<div class="converter__rate-conversion">1$ = 2$</div>
-											<div class="converter__rate-updated">Updated 28 November 2022</div>
 										</div>
 									</form>
 								</div>
@@ -154,18 +160,45 @@
 													<button class="currency-converter__btn currency-converter__remove"><span>Remove</span></button>
 												</div>
 											</div>
+											<div class="currency-converter__item">
+												<div class="currency-converter__text">
+													<div class="currency-converter__title">USD</div>
+													<div class="currency-converter__full">American dollar</div>
+												</div>
+												<div class="currency-converter__amount">
+													2.00
+												</div>
+												<div class="currency-converter__action">
+													<button class="currency-converter__btn currency-converter__remove"><span>Remove</span></button>
+												</div>
+											</div>
+											<div class="currency-converter__item">
+												<div class="currency-converter__text">
+													<div class="currency-converter__title">USD</div>
+													<div class="currency-converter__full">American dollar</div>
+												</div>
+												<div class="currency-converter__amount">
+													2.00
+												</div>
+												<div class="currency-converter__action">
+													<button class="currency-converter__btn currency-converter__remove"><span>Remove</span></button>
+												</div>
+											</div>
+											<div class="currency-converter__item">
+												<div class="currency-converter__text">
+													<div class="currency-converter__title">USD</div>
+													<div class="currency-converter__full">American dollar</div>
+												</div>
+												<div class="currency-converter__amount">
+													2.00
+												</div>
+												<div class="currency-converter__action">
+													<button class="currency-converter__btn currency-converter__remove"><span>Remove</span></button>
+												</div>
+											</div>
 										</div>
 										<div class="currency-converter__add">
 											<button class="currency-converter__add-btn converter__btn">Add currency</button>
-											<div class="converter__select select" data-state>
-												<div class="select__title" data-default="Choose currency">Choose currency</div>
-												<div class="select__content">
-													<input id="usd4" class="select__input" type="radio" name="addCurrencySelect">
-													<label for="usd4" class="select__label">USD</label>
-													<input id="eur4" class="select__input" type="radio" name="addCurrencySelect">
-												  	<label for="eur4" class="select__label">EUR</label>
-												</div>
-											 </div>
 										</div>
 									</div>
 								</div>
